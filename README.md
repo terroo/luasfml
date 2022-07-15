@@ -51,11 +51,10 @@ To fix it on Ubuntu, run the following command:
 ```bash
 sudo ln -s /usr/lib/x86_64-linux-gnu/liblua5.1.so /usr/lib/x86_64-linux-gnu/liblua.so
 ```
-> For other systems `find /usr/lib* -name 'liblua5.1.so'` where the file is and create a symlink in the same directory. Or run the commands below:
+> For other systems `find /usr/lib* -name 'liblua5.1.so'` where the file is and create a symlink in the same directory. Or run the command below:
 ```bash
-in=$(find /usr/lib* -name 'liblua5.1.so')
-on=$(find /usr/lib* -name 'liblua5.1.so' | sed 's/5.1//g')
-sudo ln -s ${in} ${on}
+sudo ln -s $(find /usr/lib* -name 'liblua5.1.so') \
+           $(find /usr/lib* -name 'liblua5.1.so' | sed 's/5.1//g')
 ```
 
 And then run `make` again:
