@@ -49,7 +49,7 @@ window = sfRenderWindow.new(sfVideoMode.new(800,600,32),"Lua SFML Basic Example"
 clearColor = sfColor.new(0,0,0);
 colorWhite = sfColor.new(255, 255, 255)
 
-font = sfFont.new() ;
+font = sfFont.new()
 font:loadFromFile("path/to/font.ttf")
 
 message = sfText.new("This is Lua SFML!",font,40);
