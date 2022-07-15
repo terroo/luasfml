@@ -20,7 +20,8 @@ LuaSFML is a lua binding of SFML, which let's you use SFML in your lua script.
 
 Example on Ubuntu
 ```bash
-sudo apt install build-essential g++ make cmake lua5.1
+sudo apt update
+sudo apt install build-essential g++ make cmake lua5.1 liblua5.1-0 liblua5.1-0-dev
 ```
 
 ---
@@ -35,6 +36,35 @@ cmake ..
 make
 sudo make install
 ```
+
+### Got error ?
+```bash
+/usr/bin/ld: could not find -llua: No such file or directory
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/luasfml.dir/build.make:801: luasfml] Erro 1
+make[1]: *** [CMakeFiles/Makefile2:84: CMakeFiles/luasfml.dir/all] Erro 2
+make: *** [Makefile:136: all] Erro 2
+```
+
+To fix it on Ubuntu, run the following command:
+
+```bash
+sudo ln -s /usr/lib/x86_64-linux-gnu/liblua5.1.so /usr/lib/x86_64-linux-gnu/liblua.so
+```
+> For other systems `find /usr/lib* -name 'liblua5.1.so'` where the file is and create a symlink in the same directory. Or run the commands below:
+```bash
+in=$(find /usr/lib* -name 'liblua5.1.so')
+on=$(find /usr/lib* -name 'liblua5.1.so' | sed 's/5.1//g')
+sudo ln -s ${in} ${on}
+```
+
+And then run `make` again:
+
+```bash
+make
+sudo make install
+```
+
 ---
 
 # Basic Example

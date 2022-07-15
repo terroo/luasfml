@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23.2)
+cmake_minimum_required(VERSION 3.22)
 project(luasfml)
 set(CMAKE_CXX_FLAGS "-std=c++17")
 
