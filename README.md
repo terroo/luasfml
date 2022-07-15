@@ -117,8 +117,6 @@ Possible output:
 ---
 
 # Similar Projects
-
-+ [luaSFML](https://github.com/Canadadry/luaSFML)
 + [Luna](https://github.com/XyronLabs/Luna)
 + [lsfml](https://github.com/Oberon00/lsfml)
 + [LSFML](https://github.com/ief015/LSFML)
